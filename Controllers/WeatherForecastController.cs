@@ -21,6 +21,9 @@ namespace Logging.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            
+            _logger.LogInformation("GET request to GetWeatherForecast");
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -28,6 +31,16 @@ namespace Logging.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] WeatherForecast model)
+        {
+            
+            _logger.LogInformation("POST request to WeatherForecastController");
+
+            
+            return Ok();
         }
     }
 }
