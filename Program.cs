@@ -48,7 +48,7 @@ namespace Logging
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Hello World! Приложение успешно развернулось!!!");
             });
 
             app.Run();
