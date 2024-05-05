@@ -48,7 +48,7 @@ namespace Logging
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World! Приложение успешно развернулось!!!");
+                await context.Response.WriteAsync("Hello World! Application deployed successfully!!!");
             });
 
             app.Run();
@@ -69,7 +69,7 @@ namespace Logging
                 endpoints.MapControllers();
             });
 
-            logger.LogInformation("Приложение успешно развернулось");
+            logger.LogInformation("Application deployed successfully");
 
             app.UseSpaStaticFiles();
             app.UseSpa(spa =>
